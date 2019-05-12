@@ -2,12 +2,28 @@ import React from 'react';
 import './App.css';
 import { scrypt } from 'crypto';
 import axios from 'axios'
+import Toolbar from './components/Toolbar/Toolbar'
+import SideDrawer from './components/SideDrawer/SideDrawer'
+import Backdrop from './components/Backdrop/Backdrop'
+
+
 
 class App extends React.Component { 
 
   state = {
-    venues: []
+    venues: [],
+    sideDrawerOpen: false,
   }
+
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen }
+    })
+  }
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
 
   componentDidMount() {
     this.getVenues()
@@ -23,7 +39,9 @@ class App extends React.Component {
     const parameters = {
       client_id: "UPFD0MA05PPNLCUM0BTECLXFKOZPNOKCH10H1UXMKRJXCE00",
       client_secret: "51PXWYMIAKGEOMI2KTRAVBASGXROQKRH0BDXN0CLNFRJLCGT",
-      query: "food",
+      llAcc: 100,
+      altAcc: 100,
+      query: "hamburguer",
       near: "São Paulo",
       v: "20190508"
     }
@@ -41,8 +59,8 @@ class App extends React.Component {
 
   initMap = () => {
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: -23.599580, lng: -46.631590},
-      zoom: 8
+      center: {lat: -23.597085, lng: -46.6628884},
+      zoom: 14
     });
 
     var infowindow = new window.google.maps.InfoWindow();
@@ -56,7 +74,7 @@ class App extends React.Component {
         position: {lat: myVenue.venue.location.lat , lng: myVenue.venue.location.lng},
         map: map,
         title: myVenue.venue.name,
-       // icon: 'map-marker-icon_34392.ico'
+        //icon: 'marker_map_icon.ico'
     });
   
       marker.addListener('click', function() {
@@ -67,9 +85,21 @@ class App extends React.Component {
   }
 
   render() {
+    let backdrop
+
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+
     return (
-      <main>
-        <div id="map"></div>
+      <main style={{ marginTop: '60px' }}>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen}/>
+        {backdrop}
+        <div id="map" className="App">
+          <section ref="map" className="map" id="map" role="application"></section>
+          <section className="left-column"></section>  
+        </div>
       </main>
     );
   }
