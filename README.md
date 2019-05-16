@@ -1,8 +1,9 @@
 # Meu São Paulo - Livrarias e Bibliotecas
 #### Udacity
-###### [ PROJETO 6 ] : Mapa do bairro (React)
-ps.: Neste caso eu fiz da minha cidade pois meu bairro não tem bibliotecas
+##### [ PROJETO 6 ] : Mapa do bairro (React)
+###### ps.: Neste caso eu fiz da minha cidade pois meu bairro não tem bibliotecas
 ------
+
 ### Um pouco sobre este projeto
 
 Este é um projeto de single-page application construído usando o React com um mapa da minha cidade.
