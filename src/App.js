@@ -30,7 +30,7 @@ class App extends React.Component {
   }
 
   renderMap = () => {
-    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAbF8_JOUKMIpyMWNhkdfW-wyGhORAXvS8&libraries=places&callback=initMap")
+    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAc3EkCL8NY4IobkxKJW2d07mYAGHt_sjQ&callback=initMap")
     window.initMap = this.initMap
   }
 
@@ -38,10 +38,10 @@ class App extends React.Component {
     const endPoint = "https://api.foursquare.com/v2/venues/explore?"
     const parameters = {
       client_id: "UPFD0MA05PPNLCUM0BTECLXFKOZPNOKCH10H1UXMKRJXCE00",
-      client_secret: "51PXWYMIAKGEOMI2KTRAVBASGXROQKRH0BDXN0CLNFRJLCGT",
+      client_secret: "JWR1GDXPB0124PT3SJUHP2MGHNIVQKST4OKGDOKQETQJDAYZ",
       llAcc: 100,
       altAcc: 100,
-      query: "hamburguer",
+      query: "library",
       near: "São Paulo",
       v: "20190508"
     }

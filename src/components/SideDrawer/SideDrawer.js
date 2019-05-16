@@ -11,11 +11,11 @@ const sideDrawer = props => {
     return (
 
     <nav className={drawerClasses}>
-        <ul>
-            <li>
-                <a href="/">Lista</a>
-            </li>
-        </ul>
+        <div class="topnav">
+        <h1>Conhecimento é poder!</h1>
+        <h4>Busque a livraria mais proxima de voce</h4>
+            <input type="text" placeholder="Buscar local..." />
+        </div>
     </nav>
     )};
 

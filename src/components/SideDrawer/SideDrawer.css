@@ -38,3 +38,18 @@
 .side-drawer.open {
     transform: translateX(0);
 }
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    border: 3px solid #00B4CC;
+    font-size: 20px;
+    margin: 2px;
+    border-radius: 5px;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 97%;
+  }
