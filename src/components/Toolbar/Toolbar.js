@@ -8,7 +8,7 @@ const toolbar = props => (
         <div>
             <DrawerToggleButton  click={props.drawerClickHandler}/>
         </div>
-            <div className="toobar-logo"><a href="/">Meu São Paulo ♡</a></div>
+            <div className="toobar-logo"><a href="/">SP - Livrarias e Bibliotecas ♡</a></div>
             <div className="spacer" />
             <div className="toolbar-navigation-items">
             <ul>

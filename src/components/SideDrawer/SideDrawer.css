@@ -1,6 +1,6 @@
 .side-drawer {
     height: 100%;
-    background: white;
+    background: #f1c40f;
     box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -43,12 +43,24 @@ input[type=text] {
     width: 130px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
-    border: 3px solid #00B4CC;
+    border: 3px solid #f39c12;
     font-size: 20px;
     margin: 2px;
     border-radius: 5px;
   }
+
+  .topnav h1 {
+    text-align: center;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
   
+  .topnav h4 {
+    text-align: center;
+    color: aliceblue;
+  }
   /* When the input field gets focus, change its width to 100% */
   input[type=text]:focus {
     width: 97%;
