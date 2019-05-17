@@ -7,7 +7,6 @@ import SideDrawer from './components/SideDrawer/SideDrawer'
 import Backdrop from './components/Backdrop/Backdrop'
 
 
-
 class App extends React.Component { 
 
   state = {

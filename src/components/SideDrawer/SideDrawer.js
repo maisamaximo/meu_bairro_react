@@ -2,6 +2,7 @@ import React from 'react';
 import './SideDrawer.css'
 
 const sideDrawer = props => {
+    
     let drawerClasses = 'side-drawer';
 
     if(props.show){
