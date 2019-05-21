@@ -84,6 +84,11 @@ class App extends React.Component {
   }
 
   render() {
+// lista o nome dos lugares disponíveis
+    const items = this.state.venues.map((item) =>
+        <li>{item.venue.name}</li>
+    );
+
     let backdrop
 
     if (this.state.sideDrawerOpen) {
@@ -94,6 +99,7 @@ class App extends React.Component {
       <main style={{ marginTop: '60px' }}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen}/>
+
         {backdrop}
         <div id="map" className="App">
           <section ref="map" className="map" id="map" role="application"></section>
