@@ -45,3 +45,9 @@ html, body {
   padding: 0;
 }
 
+.itembutton {
+  cursor: pointer;
+  background: #39CCCC;
+  padding: 3px;
+  border-radius: 4px;
+}

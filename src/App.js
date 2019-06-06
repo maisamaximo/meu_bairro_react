@@ -99,7 +99,7 @@ class App extends React.Component {
   render() {
 // lista o nome dos lugares disponíveis
     const items = this.state.venues.map((item) =>
-        <li>{item.venue.name}</li>
+        <li className="itembutton">{item.venue.name}</li>
     );
 
     let backdrop
@@ -111,8 +111,7 @@ class App extends React.Component {
     return (
       <main style={{ marginTop: '60px' }}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen}/>
-
+        <SideDrawer show={this.state.sideDrawerOpen} items={items} />
         {backdrop}
         <div id="map" className="App">
           <section ref="map" className="map" id="map" role="application"></section>
