@@ -12,11 +12,11 @@ const sideDrawer = props => {
 
     const handleKeyUp = e => {
         filteredArray = props.items.filter(item => {
-            return item.contains(e.target.value);
+            return item.key.includes(e.target.value.toUpperCase());
         });
-        console.log(e.target.value);
+        console.log(filteredArray);
     }
-
+    
     return (
 
     <nav className={drawerClasses}>
@@ -24,7 +24,7 @@ const sideDrawer = props => {
         <h1>Conhecimento é poder!</h1>
         <h4>Busque a livraria mais proxima de você!</h4>
             <input onKeyUp={handleKeyUp} type="text" placeholder="Buscar local..." />
-            <ul className="list_venues">{props.items}</ul>
+            <ul className="list_venues">{filteredArray}</ul>
         </div>
     </nav>
     )};

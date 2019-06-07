@@ -99,7 +99,7 @@ class App extends React.Component {
   render() {
 // lista o nome dos lugares disponíveis
     const items = this.state.venues.map((item) =>
-        <li className="itembutton">{item.venue.name}</li>
+        <li key={item.venue.name.toUpperCase()} className="itembutton">{item.venue.name}</li>
     );
 
     let backdrop
