@@ -14,7 +14,6 @@ const sideDrawer = props => {
         filteredArray = props.items.filter(item => {
             return item.key.includes(e.target.value.toUpperCase());
         });
-        console.log(filteredArray);
     }
     
     return (
