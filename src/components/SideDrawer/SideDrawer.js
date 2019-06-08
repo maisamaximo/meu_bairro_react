@@ -1,32 +1,46 @@
 import React from 'react';
 import './SideDrawer.css'
 
-const sideDrawer = props => {
-    
-    let drawerClasses = 'side-drawer';
-    let filteredArray = props.items;
+class sideDrawer extends React.Component {
 
-    if(props.show){
-        drawerClasses = 'side-drawer open'; 
+    constructor(){
+        super();
+        this.state = {
+            search: '',
+        }
     }
 
-    const handleKeyUp = e => {
-        filteredArray = props.items.filter(item => {
-            return item.key.includes(e.target.value.toUpperCase());
+    updateSearch(event) {
+        this.setState({search: event.target.value.substr(0,20)});
+    }
+
+    render(){
+        let drawerClasses = 'side-drawer';
+        let filteredArray = this.props.items.filter((venue) => {
+            return venue.key.toLowerCase().includes(this.state.search.toLowerCase());
         });
-        console.log(filteredArray);
-    }
-    
+
+
+        if(this.props.show){
+            drawerClasses = 'side-drawer open'; 
+        }
+
+        console.log(filteredArray)
+
     return (
 
     <nav className={drawerClasses}>
         <div className="topnav">
         <h1>Conhecimento é poder!</h1>
         <h4>Busque a livraria mais proxima de você!</h4>
-            <input onKeyUp={handleKeyUp} type="text" placeholder="Buscar local..." />
-            <ul className="list_venues">{filteredArray}</ul>
+
+            <input value={this.state.search} onChange={this.updateSearch.bind(this)} type="text" placeholder="Buscar local..." />
+            <ul className="list_venues">{filteredArray.map((venue) => {
+                return venue
+            })}</ul>
         </div>
     </nav>
     )};
+}
 
 export default sideDrawer;

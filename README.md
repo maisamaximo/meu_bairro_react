@@ -2,6 +2,7 @@
 #### Udacity
 ##### [ PROJETO 6 ] : Mapa do bairro (React)
 ###### ps.: Neste caso eu fiz da minha cidade pois meu bairro não tem bibliotecas
+
 ------
 
 ### Um pouco sobre este projeto
@@ -48,5 +49,7 @@ $ Run npm start
 ##### 5º - Acesse a seguinte URL
 
 [localhost:3000](http://localhost:3000)
+
+######This application is using Foursquare. The most trusted, independent location data platform for understanding how people move through the real world.
 
 ```In code we trust ❤ ```

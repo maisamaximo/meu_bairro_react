@@ -52,7 +52,7 @@ class App extends React.Component {
       }, this.renderMap())
     })
     .catch(error => {
-      console.log("error " + error)
+      window.alert("Sem dados para serem exibidos. Erro > " + error)
     })
   }
 
@@ -140,6 +140,7 @@ function loadScript(url){
   script.async = true
   script.defer = true 
   index.parentNode.insertBefore(script,index)
+  script.onerror = () => {alert("Falha ao carregar a página.")}
 
 }
 export default App;
