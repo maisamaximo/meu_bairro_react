@@ -16,8 +16,8 @@ class sideDrawer extends React.Component {
 
     render(){
         let drawerClasses = 'side-drawer';
-        let filteredArray = this.props.items.filter((venue) => {
-            return venue.key.toLowerCase().includes(this.state.search.toLowerCase());
+        let filteredArray = this.props.items.filter((item) => {
+            return item.venue.name.toLowerCase().includes(this.state.search.toLowerCase());
         });
 
 
@@ -35,8 +35,8 @@ class sideDrawer extends React.Component {
         <h4>Busque a livraria mais proxima de você!</h4>
 
             <input value={this.state.search} onChange={this.updateSearch.bind(this)} type="text" placeholder="Buscar local..." />
-            <ul className="list_venues">{filteredArray.map((venue) => {
-                return venue
+            <ul className="list_venues">{filteredArray.map((item) => {
+                return <li key={item.venue.name.toUpperCase()} className="itembutton">{item.venue.name}</li>
             })}</ul>
         </div>
     </nav>
