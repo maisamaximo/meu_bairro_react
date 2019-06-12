@@ -88,12 +88,14 @@ class App extends React.Component {
         map: map,
         title: myVenue.venue.name,
         icon: defaultIcon,
+        animation: window.google.maps.Animation.DROP
       });
   
       marker.addListener('click', function() {
         infowindow.setContent(contentString)
         infowindow.open(map, marker)
         map.setCenter(marker.getPosition())
+        toggleBounce(this);
       });
 
       marker.addListener('mouseover', function() {
@@ -196,5 +198,13 @@ function loadScript(url){
   index.parentNode.insertBefore(script,index)
   script.onerror = () => {alert("Falha ao carregar a página.")}
 
+}
+
+function toggleBounce(ele) {
+  if (ele.getAnimation() !== null) {
+    ele.setAnimation(null);
+  } else {
+    ele.setAnimation(window.google.maps.Animation.BOUNCE);
+  }
 }
 export default App;
